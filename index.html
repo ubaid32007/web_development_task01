@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ubaid Akbar — CS Student, UET Mardan</title>
+<style>
+  :root {
+    --ink: #1b1f23;
+    --paper: #f7f5f0;
+    --rule: #d8d3c6;
+    --accent: #2f5d50;
+    --muted: #6b6558;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Georgia', 'Iowan Old Style', serif;
+    line-height: 1.6;
+  }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 6rem;
+  }
+
+  .masthead {
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .masthead p.kicker {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    margin: 0 0 0.75rem;
+  }
+
+  h1 {
+    font-size: 2.75rem;
+    margin: 0 0 0.5rem;
+    font-weight: 400;
+    line-height: 1.15;
+  }
+
+  .role {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.05rem;
+    color: var(--accent);
+    margin: 0;
+  }
+
+  section { margin-bottom: 3rem; }
+
+  h2 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+    color: var(--muted);
+    font-weight: 600;
+    margin: 0 0 1rem;
+  }
+
+  p { margin: 0 0 1rem; max-width: 62ch; }
+
+  ul.stack {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  ul.stack li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--rule);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.95rem;
+  }
+
+  ul.stack li span.label { color: var(--muted); }
+
+  a.contact-link {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+  }
+
+  a.contact-link:hover { color: var(--accent); }
+
+  footer {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.8rem;
+    color: var(--muted);
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    .wrap { padding: 3rem 1.25rem 4rem; }
+    h1 { font-size: 2.1rem; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="masthead">
+      <p class="kicker">CS402 · Web Design and Development</p>
+      <h1>Ubaid Akbar</h1>
+      <p class="role">Computer Science Student, UET Mardan</p>
+    </header>
+
+    <section>
+      <h2>About</h2>
+      <p>
+        I'm a computer science student at UET Mardan, currently learning how
+        the Web actually works — from URLs and browsers to servers and the
+        code that ties it all together. This page is my first deployed
+        website, built for Lecture 1 of Web Design and Development.
+      </p>
+    </section>
+
+    <section>
+      <h2>What I'm Learning</h2>
+      <ul class="stack">
+        <li><span>HTML &amp; page structure</span><span class="label">In progress</span></li>
+        <li><span>CSS &amp; layout</span><span class="label">In progress</span></li>
+        <li><span>Git &amp; GitHub</span><span class="label">In progress</span></li>
+        <li><span>Deploying with Vercel</span><span class="label">Done</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>
+        Reach me at
+        <a class="contact-link" href="mailto:akbarubaid30@gmail.com">akbarubaid30@gmail.com</a>.
+      </p>
+    </section>
+
+    <footer>
+      Built &amp; deployed as part of CS402, UET Mardan.
+    </footer>
+
+  </div>
+</body>
+</html>
