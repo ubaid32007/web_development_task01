@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Task 2 - University Admission Form</title>
+<style>
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #eef1f5;
+  margin: 0;
+  color: #222;
+}
+
+/* nav bar at top */
+.top-nav{
+  background-color: #16325c;
+  padding: 10px;
+}
+.top-nav a{
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 14px;
+  border: 1px solid white;
+}
+.top-nav a:hover{
+  background-color: white;
+  color: #16325c;
+}
+
+header{
+  background-color: #274c77;
+  color: white;
+  text-align: center;
+  padding: 25px 10px;
+}
+header h1{
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+header p{
+  font-style: italic;
+  text-decoration: underline;
+  margin-top: 5px;
+}
+
+h2{
+  color: #274c77;
+  border-bottom: 2px solid #274c77;
+  padding-bottom: 5px;
+  text-transform: capitalize;
+}
+
+.container{
+  max-width: 850px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+p.note{
+  text-indent: 25px;
+  line-height: 1.7;
+  text-align: justify;
+  color: #444;
+}
+
+/* the form itself */
+form{
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+fieldset{
+  margin-bottom: 15px;
+  border: 1px solid #aaa;
+  padding: 10px 15px;
+}
+
+legend{
+  font-weight: bold;
+  color: #274c77;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+label{
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+label.inline{
+  display: inline;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+input[type=text], input[type=password], input[type=date],
+input[type=email], input[type=tel], input[type=number],
+select, textarea, input[type=file]{
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+  border: 1px solid #999;
+}
+
+textarea{
+  resize: vertical;
+}
+
+.btns{
+  text-align: center;
+  margin-top: 15px;
+}
+.btns button{
+  padding: 8px 20px;
+  margin: 0 5px;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+button[type=submit]{
+  background-color: #274c77;
+  color: white;
+}
+button[type=reset]{
+  background-color: #ccc;
+}
+
+/* table */
+table{
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  margin-top: 10px;
+}
+th, td{
+  border: 1px solid #999;
+  padding: 8px;
+  text-align: left;
+}
+th{
+  background-color: #274c77;
+  color: white;
+  text-transform: uppercase;
+}
+tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+
+.media-section h3{
+  color: #274c77;
+  text-decoration: underline;
+  margin-top: 20px;
+}
+.media-section iframe, .media-section video, .media-section audio{
+  display: block;
+  margin-top: 8px;
+  max-width: 100%;
+}
+
+pre{
+  background-color: #1e1e1e;
+  color: #ddd;
+  padding: 15px;
+  overflow-x: auto;
+  white-space: pre;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+footer{
+  text-align: center;
+  background-color: #16325c;
+  color: white;
+  padding: 15px;
+  margin-top: 30px;
+  font-size: 13px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="top-nav">
+  <a href="index.html">Task 1</a>
+</div>
+
+<header>
+  <h1>University of Engineering and Technology Mardan</h1>
+  <p>Online Admission Form</p>
+</header>
+
+<div class="container">
+
+<p class="note">Fill out the form below to apply for admission. Make sure all required fields are completed before submitting.</p>
+
+<form id="admissionForm">
+
+  <fieldset>
+    <legend>Personal Information</legend>
+
+    <label for="fullname">Full Name:</label>
+    <input type="text" id="fullname" name="fullname" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" minlength="6" required>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required>
+
+    <label>Gender:</label>
+    <input type="radio" id="male" name="gender" value="Male" required>
+    <label for="male" class="inline">Male</label>
+    <input type="radio" id="female" name="gender" value="Female">
+    <label for="female" class="inline">Female</label>
+    <input type="radio" id="othergender" name="gender" value="Other">
+    <label for="othergender" class="inline">Other</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Contact Information</legend>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{11}" placeholder="03XXXXXXXXX">
+
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city">
+
+    <label for="address">Address:</label>
+    <textarea id="address" name="address" rows="3"></textarea>
+  </fieldset>
+
+  <fieldset>
+    <legend>Academic Information</legend>
+
+    <label for="marks">Previous Marks (%):</label>
+    <input type="number" id="marks" name="marks" min="0" max="100" step="0.01">
+
+    <label for="program">Preferred Program:</label>
+    <select id="program" name="program" required>
+      <option value="">-- Select --</option>
+      <option value="cs">Computer Science</option>
+      <option value="ee">Electrical Engineering</option>
+      <option value="civil">Civil Engineering</option>
+      <option value="bba">Business Administration</option>
+      <option value="med">Medicine</option>
+    </select>
+  </fieldset>
+
+  <fieldset>
+    <legend>Interests / Skills</legend>
+    <input type="checkbox" id="prog" name="skills" value="Programming">
+    <label for="prog" class="inline">Programming</label>
+    <input type="checkbox" id="design" name="skills" value="Design">
+    <label for="design" class="inline">Design</label>
+    <input type="checkbox" id="sports" name="skills" value="Sports">
+    <label for="sports" class="inline">Sports</label>
+    <input type="checkbox" id="music" name="skills" value="Music">
+    <label for="music" class="inline">Music</label>
+    <input type="checkbox" id="writing" name="skills" value="Writing">
+    <label for="writing" class="inline">Writing</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Profile Picture</legend>
+    <label for="profilepic">Upload Photo:</label>
+    <input type="file" id="profilepic" name="profilepic" accept="image/*">
+  </fieldset>
+
+  <fieldset>
+    <legend>Additional Information</legend>
+    <label for="reason">Why do you want to join our university?</label>
+    <textarea id="reason" name="reason" rows="4"></textarea>
+  </fieldset>
+
+  <div class="btns">
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+  </div>
+
+</form>
+
+<h2>Sample Student Records</h2>
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Department</th>
+  </tr>
+  <tr><td>Ali</td><td>Khan</td><td>ali.khan@example.com</td><td>Computer Science</td></tr>
+  <tr><td>Sara</td><td>Ahmed</td><td>sara.ahmed@example.com</td><td>Electrical Engineering</td></tr>
+  <tr><td>Bilal</td><td>Hussain</td><td>bilal.hussain@example.com</td><td>Business Administration</td></tr>
+  <tr><td>Ayesha</td><td>Malik</td><td>ayesha.malik@example.com</td><td>Civil Engineering</td></tr>
+  <tr><td>Usman</td><td>Raza</td><td>usman.raza@example.com</td><td>Medicine</td></tr>
+</table>
+
+<div class="media-section">
+<h2>Campus Media</h2>
+
+<h3>Location</h3>
+<iframe src="https://www.google.com/maps?q=University%20of%20Engineering%20and%20Technology%20Mardan&output=embed" width="100%" height="280" title="map"></iframe>
+
+<h3>Campus Video</h3>
+<video width="450" controls>
+  <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
+</video>
+
+<h3>Audio Clip</h3>
+<audio controls>
+  <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<h2>My Code</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;title&gt;Task 2 - University Admission Form&lt;/title&gt;
+&lt;style&gt;
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #eef1f5;
+  margin: 0;
+  color: #222;
+}
+
+/* nav bar at top */
+.top-nav{
+  background-color: #16325c;
+  padding: 10px;
+}
+.top-nav a{
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 14px;
+  border: 1px solid white;
+}
+.top-nav a:hover{
+  background-color: white;
+  color: #16325c;
+}
+
+header{
+  background-color: #274c77;
+  color: white;
+  text-align: center;
+  padding: 25px 10px;
+}
+header h1{
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+header p{
+  font-style: italic;
+  text-decoration: underline;
+  margin-top: 5px;
+}
+
+h2{
+  color: #274c77;
+  border-bottom: 2px solid #274c77;
+  padding-bottom: 5px;
+  text-transform: capitalize;
+}
+
+.container{
+  max-width: 850px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+p.note{
+  text-indent: 25px;
+  line-height: 1.7;
+  text-align: justify;
+  color: #444;
+}
+
+/* the form itself */
+form{
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+fieldset{
+  margin-bottom: 15px;
+  border: 1px solid #aaa;
+  padding: 10px 15px;
+}
+
+legend{
+  font-weight: bold;
+  color: #274c77;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+label{
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+label.inline{
+  display: inline;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+input[type=text], input[type=password], input[type=date],
+input[type=email], input[type=tel], input[type=number],
+select, textarea, input[type=file]{
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+  border: 1px solid #999;
+}
+
+textarea{
+  resize: vertical;
+}
+
+.btns{
+  text-align: center;
+  margin-top: 15px;
+}
+.btns button{
+  padding: 8px 20px;
+  margin: 0 5px;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+button[type=submit]{
+  background-color: #274c77;
+  color: white;
+}
+button[type=reset]{
+  background-color: #ccc;
+}
+
+/* table */
+table{
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  margin-top: 10px;
+}
+th, td{
+  border: 1px solid #999;
+  padding: 8px;
+  text-align: left;
+}
+th{
+  background-color: #274c77;
+  color: white;
+  text-transform: uppercase;
+}
+tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+
+.media-section h3{
+  color: #274c77;
+  text-decoration: underline;
+  margin-top: 20px;
+}
+.media-section iframe, .media-section video, .media-section audio{
+  display: block;
+  margin-top: 8px;
+  max-width: 100%;
+}
+
+pre{
+  background-color: #1e1e1e;
+  color: #ddd;
+  padding: 15px;
+  overflow-x: auto;
+  white-space: pre;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+footer{
+  text-align: center;
+  background-color: #16325c;
+  color: white;
+  padding: 15px;
+  margin-top: 30px;
+  font-size: 13px;
+}
+
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class="top-nav"&gt;
+  &lt;a href="index.html"&gt;Task 1&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;header&gt;
+  &lt;h1&gt;University of Engineering and Technology Mardan&lt;/h1&gt;
+  &lt;p&gt;Online Admission Form&lt;/p&gt;
+&lt;/header&gt;
+
+&lt;div class="container"&gt;
+
+&lt;p class="note"&gt;Fill out the form below to apply for admission. Make sure all required fields are completed before submitting.&lt;/p&gt;
+
+&lt;form id="admissionForm"&gt;
+
+  &lt;fieldset&gt;
+    &lt;legend&gt;Personal Information&lt;/legend&gt;
+
+    &lt;label for="fullname"&gt;Full Name:&lt;/label&gt;
+    &lt;input type="text" id="fullname" name="fullname" required&gt;
+
+    &lt;label for="password"&gt;Password:&lt;/label&gt;
+    &lt;input type="password" id="password" name="password" minlength="6" required&gt;
+
+    &lt;label for="dob"&gt;Date of Birth:&lt;/label&gt;
+    &lt;input type="date" id="dob" name="dob" required&gt;
+
+    &lt;label&gt;Gender:&lt;/label&gt;
+    &lt;input type="radio" id="male" name="gender" value="Male" required&gt;
+    &lt;label for="male" class="inline"&gt;Male&lt;/label&gt;
+    &lt;input type="radio" id="female" name="gender" value="Female"&gt;
+    &lt;label for="female" class="inline"&gt;Female&lt;/label&gt;
+    &lt;input type="radio" id="othergender" name="gender" value="Other"&gt;
+    &lt;label for="othergender" class="inline"&gt;Other&lt;/label&gt;
+  &lt;/fieldset&gt;
+
+  &lt;fieldset&gt;
+    &lt;legend&gt;Contact Information&lt;/legend&gt;
+
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+
+    &lt;label for="phone"&gt;Phone Number:&lt;/label&gt;
+    &lt;input type="tel" id="phone" name="phone" pattern="[0-9]{11}" placeholder="03XXXXXXXXX"&gt;
+
+    &lt;label for="city"&gt;City:&lt;/label&gt;
+    &lt;input type="text" id="city" name="city"&gt;
+
+    &lt;label for="address"&gt;Address:&lt;/label&gt;
+    &lt;textarea id="address" name="address" rows="3"&gt;&lt;/textarea&gt;
+  &lt;/fieldset&gt;
+
+  &lt;fieldset&gt;
+    &lt;legend&gt;Academic Information&lt;/legend&gt;
+
+    &lt;label for="marks"&gt;Previous Marks (%):&lt;/label&gt;
+    &lt;input type="number" id="marks" name="marks" min="0" max="100" step="0.01"&gt;
+
+    &lt;label for="program"&gt;Preferred Program:&lt;/label&gt;
+    &lt;select id="program" name="program" required&gt;
+      &lt;option value=""&gt;-- Select --&lt;/option&gt;
+      &lt;option value="cs"&gt;Computer Science&lt;/option&gt;
+      &lt;option value="ee"&gt;Electrical Engineering&lt;/option&gt;
+      &lt;option value="civil"&gt;Civil Engineering&lt;/option&gt;
+      &lt;option value="bba"&gt;Business Administration&lt;/option&gt;
+      &lt;option value="med"&gt;Medicine&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/fieldset&gt;
+
+  &lt;fieldset&gt;
+    &lt;legend&gt;Interests / Skills&lt;/legend&gt;
+    &lt;input type="checkbox" id="prog" name="skills" value="Programming"&gt;
+    &lt;label for="prog" class="inline"&gt;Programming&lt;/label&gt;
+    &lt;input type="checkbox" id="design" name="skills" value="Design"&gt;
+    &lt;label for="design" class="inline"&gt;Design&lt;/label&gt;
+    &lt;input type="checkbox" id="sports" name="skills" value="Sports"&gt;
+    &lt;label for="sports" class="inline"&gt;Sports&lt;/label&gt;
+    &lt;input type="checkbox" id="music" name="skills" value="Music"&gt;
+    &lt;label for="music" class="inline"&gt;Music&lt;/label&gt;
+    &lt;input type="checkbox" id="writing" name="skills" value="Writing"&gt;
+    &lt;label for="writing" class="inline"&gt;Writing&lt;/label&gt;
+  &lt;/fieldset&gt;
+
+  &lt;fieldset&gt;
+    &lt;legend&gt;Profile Picture&lt;/legend&gt;
+    &lt;label for="profilepic"&gt;Upload Photo:&lt;/label&gt;
+    &lt;input type="file" id="profilepic" name="profilepic" accept="image/*"&gt;
+  &lt;/fieldset&gt;
+
+  &lt;fieldset&gt;
+    &lt;legend&gt;Additional Information&lt;/legend&gt;
+    &lt;label for="reason"&gt;Why do you want to join our university?&lt;/label&gt;
+    &lt;textarea id="reason" name="reason" rows="4"&gt;&lt;/textarea&gt;
+  &lt;/fieldset&gt;
+
+  &lt;div class="btns"&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;button type="reset"&gt;Reset&lt;/button&gt;
+  &lt;/div&gt;
+
+&lt;/form&gt;
+
+&lt;h2&gt;Sample Student Records&lt;/h2&gt;
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;First Name&lt;/th&gt;
+    &lt;th&gt;Last Name&lt;/th&gt;
+    &lt;th&gt;Email&lt;/th&gt;
+    &lt;th&gt;Department&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Ali&lt;/td&gt;&lt;td&gt;Khan&lt;/td&gt;&lt;td&gt;ali.khan@example.com&lt;/td&gt;&lt;td&gt;Computer Science&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Sara&lt;/td&gt;&lt;td&gt;Ahmed&lt;/td&gt;&lt;td&gt;sara.ahmed@example.com&lt;/td&gt;&lt;td&gt;Electrical Engineering&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Bilal&lt;/td&gt;&lt;td&gt;Hussain&lt;/td&gt;&lt;td&gt;bilal.hussain@example.com&lt;/td&gt;&lt;td&gt;Business Administration&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Ayesha&lt;/td&gt;&lt;td&gt;Malik&lt;/td&gt;&lt;td&gt;ayesha.malik@example.com&lt;/td&gt;&lt;td&gt;Civil Engineering&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Usman&lt;/td&gt;&lt;td&gt;Raza&lt;/td&gt;&lt;td&gt;usman.raza@example.com&lt;/td&gt;&lt;td&gt;Medicine&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;div class="media-section"&gt;
+&lt;h2&gt;Campus Media&lt;/h2&gt;
+
+&lt;h3&gt;Location&lt;/h3&gt;
+&lt;iframe src="https://www.google.com/maps?q=University%20of%20Engineering%20and%20Technology%20Mardan&amp;output=embed" width="100%" height="280" title="map"&gt;&lt;/iframe&gt;
+
+&lt;h3&gt;Campus Video&lt;/h3&gt;
+&lt;video width="450" controls&gt;
+  &lt;source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm"&gt;
+&lt;/video&gt;
+
+&lt;h3&gt;Audio Clip&lt;/h3&gt;
+&lt;audio controls&gt;
+  &lt;source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;
+&lt;/div&gt;
+
+&lt;h2&gt;My Code&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;... (code inside this box left out so it does not go on forever) ...&lt;/code&gt;&lt;/pre&gt;
+
+&lt;/div&gt;
+
+&lt;footer&gt;
+  Task 2 - University Admission Form - Ubaid
+&lt;/footer&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+</div>
+
+<footer>
+  Task 2 - University Admission Form - Ubaid
+</footer>
+
+</body>
+</html>
